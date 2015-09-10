@@ -4,13 +4,10 @@
   <title>In class Exercise 2</title>
  </head>
  <body>
- 	<! A basic function import for form use >
 	<form action = "ex2.php"
 	      method = "POST">
 	name
-	<! Name of post = name >
 	<input type = "text" name = "name" size = "30" maxlength = "30">
-	<! Submit button >
 	<input type = "submit" value = "Submit">
  </body>
 </html>
