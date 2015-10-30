@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type = "text/javascript">
+		function hello()
+		{
+			var hi = document.getElementById("tester").value;
+			hi = hi.toLowerCase();
+			var match = hi.match(/cs[0-3][0-9]{3}/);
+			if(match)
+				alert("Accepted!");
+			else
+				alert("Rejected.");
+		}
+		</script>
+	</head>
+	<body>
+	<form name="form0"
+		action = "inclass6.html"
+		method = "POST"
+		onSubmit = "return hello()">
+		<input type = "text" name = "test" id="tester">
+		<script type = "text/javascript">
+			document.getElementById("tester").focus();
+		</script>
+		<input type = "submit" name = "submit" value = "Submit">
+	</body>
+</html>

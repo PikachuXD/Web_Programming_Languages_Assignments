@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button type="button" onclick="loadDoc()">Toggle Data</button>
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  var check = document.getElementById("demo").innerHTML;
+  if(check)
+  {
+  	  document.getElementById("demo").innerHTML = "";
+  }
+  else{
+	  xhttp.onreadystatechange = function() {
+	    if (xhttp.readyState == 4 && xhttp.status == 200) {
+	      document.getElementById("demo").innerHTML = xhttp.responseText;
+	    }
+	  }
+	  xhttp.open("GET", "file1.txt", true);
+	  xhttp.send();
+  }
+}
+</script>
+
+<div id="demo"></div>
+
+</body>
+</html>
