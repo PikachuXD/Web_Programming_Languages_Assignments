@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+	</script>
+	<script>
+
+	$(document).ready(function(){
+		var array = Array();
+	var count = Array();
+    $("button").click(function(){
+        $.ajax({
+        	type: "POST",
+        	url: "getWord.php",
+        	dataType: "xml",
+        	success: function(result) {
+        		$(result).find("Word").each(function() {
+        			var name = $(this).find("value").text();
+        			if (array.indexOf(name) == -1) {
+        				array.push(name);
+        				count.push(1);
+        			}
+        			else {
+        				var index = array.indexOf(name);
+        				count[index] = count[index] + 1;
+
+        			}
+        			//alert(JSON.stringify(array));
+        			var str = "";
+        			for (var i = 0; i < array.length; i++) {
+        				str += "<tr><td>"; 
+        				str += array[i];
+        				str += "</td><td>";
+        				str += count[i];
+        				str += "</td></tr>";
+
+        				
+        			}
+        			$("table").html(str);
+        			//alert(str);
+        		})
+        	}
+
+        })
+    });
+});
+
+	</script>
+</head>
+<body>
+	<button> hi </button>
+	<table id = "tab" border="1px">
+	</table>
+</body>
+</html>

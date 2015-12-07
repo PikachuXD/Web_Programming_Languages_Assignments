@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+	var str = "";
+	function but() {
+	var htmlRequest = new XMLHttpRequest();
+
+	htmlRequest.onreadystatechange = function() {
+		if (htmlRequest.readyState == 4 && htmlRequest.status == 200) {
+
+			var output = htmlRequest.responseXML;
+			var questions = output.getElementsByTagName("question");
+			var problem = output.getElementsByTagName("problem");
+			for (var i = 0; i < questions.length; i++) {
+				str += questions[i].childNodes[0].nodeValue;
+				var choices = problem[i].getElementsByTagName("answer");
+				str += "<select>";
+				for (var j = 0; j < choices.length; j++) {
+					str += "<option>";
+					str += choices[j].childNodes[0].nodeValue;
+					str += "</option>";
+				}
+
+				str += "</select>";
+				str += "<br/>";
+
+				//alert(str);
+				document.getElementById("di").innerHTML = str;
+			}
+		}
+	}
+	htmlRequest.open('GET', 'data.xml', true);
+	htmlRequest.send();
+
+	}
+	</script>
+
+</head>
+<body>
+	<h1> Please Click to see your quiz </h1>
+	<div id = "di"></div>
+	<button id = "butt" onclick = "but()" > Enter </button>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz-problems>
+<problem>
+<question>
+	How many licks does it take to get to the Tootsie Roll center of a Tootsie Pop? </question>
+	<answer> 1 </answer>
+	<answer> 2 </answer>
+	<answer> 3 </answer>
+	<answer> 100 </answer>
+<correct> 3 </correct>
+</problem>
+<problem>
+	<question> What is an ROUS? </question>
+	<answer> Really Outstanding Uncertain Situation </answer>
+	<answer> Ridiculous Offering Under Stress </answer>
+	<answer> Rodent Of Unusual Size </answer>
+	<correct> Rodent Of Unusual Size </correct>
+</problem>
+<problem>
+	<question> What book will win the National Book Award? </question>
+	<answer> Refund </answer>
+	<answer> The Turner House </answer>
+	<answer> Fates and Furies </answer>
+	<answer> Fortune Smiles </answer>
+	<answer> A Little Life  </answer>
+	<correct> Fates and Furies </correct>
+</problem>
+</quiz-problems>
